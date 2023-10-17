@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "jest": "^29.7.0",
+    "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "lerna": "^7.3.1"
+  }
+}
