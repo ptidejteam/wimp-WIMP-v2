@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "nodemon ./lib/index.js",
     "start": "node ./lib/index.js",
-    "test": "mocha ./__tests__/gateway.test.js"
+    "test": "mocha ./__tests__/gateway.test.js",
+    "build:webpack": "webpack --mode production"
   },
   "dependencies": {
     "@grpc-web/proxy": "^0.1.0",
