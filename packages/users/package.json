@@ -5,7 +5,7 @@
   "author": "YahiaFellah <33671463+yahiaelfellah@users.noreply.github.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/users.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -14,6 +14,10 @@
     "lib"
   ],
   "scripts": {
-    "test": "node ./__tests__/users.test.js"
+    "dev":"nodemon ./lib/index.js",
+    "test": "mocha ./__tests__/users.test.js"
+  },
+  "dependencies": {
+    "security": "file:../security"
   }
 }
