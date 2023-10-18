@@ -16,8 +16,11 @@
   "scripts": {
     "dev": "nodemon ./lib/index.js",
     "start": "node ./lib/index.js",
-    "jest": "jest ./__tests__/users.route.test.js",
-    "test": "mocha ./__tests__/users.test.js --detectOpenHandles"
+    "jest": "jest ./__tests__/users.route.test.js --detectOpenHandles",
+    "test": "mocha ./__tests__/users.test.js ",
+    "test:load": "k6 run ./__tests__/load.test.js",
+    "build:webpack": "webpack --mode production"
+
   },
   "dependencies": {
     "security": "file:../security"
