@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken'),
     crypto = require('crypto');
 const refresh_secret = require('../env.config.js').refresh_secret;
-const fs = require('fs');
-const cert = fs.readFileSync( './security/tls/private.key',{encoding:'utf-8'});
+const cert = require('security')();
+
 exports.validJWTNeeded = (req, res, next) => {
     if (req.headers['authorization']) {
         try {
@@ -25,7 +25,6 @@ exports.validJWTNeeded = (req, res, next) => {
 };
 
 exports.verifyRefreshBodyField = (req, res, next) => {
-    console.log(req.body);
     if (req.body && req.body.refreshToken) {
         return next();
     } else {
