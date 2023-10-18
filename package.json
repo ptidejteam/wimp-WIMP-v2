@@ -16,5 +16,10 @@
   "devDependencies": {
     "lerna": "^7.3.1",
     "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "build": "lerna run build:webpack",
+    "bootstrap":"lerna bootstrap",
+    "dev": "lerna run dev --stream"
   }
 }
