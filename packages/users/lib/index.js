@@ -21,3 +21,5 @@ connect()
   .catch((ex) => {
     console.log("Invalid Database connection.......");
   });
+
+  module.exports = app;

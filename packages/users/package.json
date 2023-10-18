@@ -14,10 +14,15 @@
     "lib"
   ],
   "scripts": {
-    "dev":"nodemon ./lib/index.js",
-    "test": "mocha ./__tests__/users.test.js"
+    "dev": "nodemon ./lib/index.js",
+    "start": "node ./lib/index.js",
+    "jest": "jest ./__tests__/users.route.test.js",
+    "test": "mocha ./__tests__/users.test.js --detectOpenHandles"
   },
   "dependencies": {
     "security": "file:../security"
+  },
+  "devDependencies": {
+    "supertest": "^6.3.3"
   }
 }
