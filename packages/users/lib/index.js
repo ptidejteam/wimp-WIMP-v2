@@ -1,6 +1,6 @@
 const app = require("./app");
 const config = require("dotenv").config();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const { connect } = require("./routes/models/identity.model");
 
 connect()
