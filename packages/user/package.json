@@ -1,0 +1,32 @@
+{
+  "name": "y",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "YahiaFellah <33671463+yahiaelfellah@users.noreply.github.com>",
+  "homepage": "https://github.com/ptidejteam/WIMPv2#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptidejteam/WIMPv2.git"
+  },
+  "scripts": {
+    "start": "node ./lib/index.js",
+    "dev":"nodemon ./lib/index.js",
+    "test": "node ./__tests__/user.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ptidejteam/WIMPv2/issues"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.21.2",
+    "nodemon": "^3.0.2"
+  }
+}
