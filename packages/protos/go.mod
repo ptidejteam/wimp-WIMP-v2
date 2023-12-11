@@ -1,4 +1,4 @@
-module github.com/ptidejteam/WIMPv2/protos
+module github.com/ptidejteam/WIMPv2/packages/protos
 
 go 1.21.4
 
