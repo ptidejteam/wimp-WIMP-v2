@@ -2,16 +2,16 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v4.25.1
-// source: lib/api/api.proto
+// source: api/api.proto
 
 package api
 
 import (
+	user "WIMPv2/protos/user"
 	context "context"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	user "protos/user"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -174,5 +174,5 @@ var API_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "lib/api/api.proto",
+	Metadata: "api/api.proto",
 }

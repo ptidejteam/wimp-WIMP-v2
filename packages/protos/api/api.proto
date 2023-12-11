@@ -1,7 +1,7 @@
 syntax = "proto3";
 package protos.api;
 
-option go_package = "protos/api";
+option go_package = "WIMPv2/protos/api";
 
 import "google/api/annotations.proto";
 import "user/user.proto";
