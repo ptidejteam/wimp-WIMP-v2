@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package protos.user;
 
-option go_package = "module github.com/ptidejteam/WIMPv2/packages/protos/user";
+option go_package = "github.com/ptidejteam/WIMPv2/packages/protos/user";
 
 import "google/protobuf/timestamp.proto"; // Import the timestamp.proto file
 
