@@ -8,6 +8,7 @@ import "google/protobuf/timestamp.proto"; // Import the timestamp.proto file
 
 service UserSvc {
     rpc Authenticate(LoginRequest) returns (LoginResponse);
+    rpc Verify (VerifyRequest) returns (VerifyResponse);
     rpc Refresh(RefreshRequest) returns (LoginResponse);
     rpc Create(CreateRequest) returns (CreateResponse);
     rpc Get(GetRequest) returns (GetResponse);
@@ -24,6 +25,14 @@ message UserObject {
     int32 permission_level = 6;
     string department = 7;
     bool is_active = 8;
+}
+
+message VerifyRequest {
+    string token = 1;
+}
+
+message VerifyResponse {
+    string id = 1;
 }
 
 message LoginRequest {

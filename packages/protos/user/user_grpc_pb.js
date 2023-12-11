@@ -126,6 +126,28 @@ function deserialize_protos_user_UpdateResponse(buffer_arg) {
   return user_pb.UpdateResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_protos_user_VerifyRequest(arg) {
+  if (!(arg instanceof user_pb.VerifyRequest)) {
+    throw new Error('Expected argument of type protos.user.VerifyRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_protos_user_VerifyRequest(buffer_arg) {
+  return user_pb.VerifyRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_protos_user_VerifyResponse(arg) {
+  if (!(arg instanceof user_pb.VerifyResponse)) {
+    throw new Error('Expected argument of type protos.user.VerifyResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_protos_user_VerifyResponse(buffer_arg) {
+  return user_pb.VerifyResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var UserSvcService = exports.UserSvcService = {
   authenticate: {
@@ -138,6 +160,17 @@ var UserSvcService = exports.UserSvcService = {
     requestDeserialize: deserialize_protos_user_LoginRequest,
     responseSerialize: serialize_protos_user_LoginResponse,
     responseDeserialize: deserialize_protos_user_LoginResponse,
+  },
+  verify: {
+    path: '/protos.user.UserSvc/Verify',
+    requestStream: false,
+    responseStream: false,
+    requestType: user_pb.VerifyRequest,
+    responseType: user_pb.VerifyResponse,
+    requestSerialize: serialize_protos_user_VerifyRequest,
+    requestDeserialize: deserialize_protos_user_VerifyRequest,
+    responseSerialize: serialize_protos_user_VerifyResponse,
+    responseDeserialize: deserialize_protos_user_VerifyResponse,
   },
   refresh: {
     path: '/protos.user.UserSvc/Refresh',
