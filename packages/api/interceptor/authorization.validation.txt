@@ -1,0 +1,136 @@
+// package main
+
+// import (
+// 	"context"
+// 	"crypto/hmac"
+// 	"crypto/sha512"
+// 	"encoding/base64"
+// 	"fmt"
+// 	"log"
+// 	"net"
+
+// 	"google.golang.org/grpc"
+// 	"google.golang.org/grpc/codes"
+// 	"google.golang.org/grpc/metadata"
+// 	"google.golang.org/grpc/status"
+// )
+
+// const refreshSecret = "your_refresh_secret" // Replace with your refresh secret
+// const issuer = "urn:yahia.xyz"
+// const audience = "urn:%s" // You may adjust the audience based on your requirements
+
+// // YourService represents your gRPC service implementation.
+// type YourService struct{}
+
+// // YourRequestType represents the actual type of your gRPC request.
+// type YourRequestType struct {
+// 	// Define the fields of your request.
+// }
+
+// // YourResponseType represents the actual type of your gRPC response.
+// type YourResponseType struct {
+// 	// Define the fields of your response.
+// }
+
+// // YourDecodedJWTType represents the actual type of your decoded JWT.
+// type YourDecodedJWTType struct {
+// 	// Define the fields of your decoded JWT.
+// }
+
+// func main() {
+// 	lis, err := net.Listen("tcp", ":50051")
+// 	if err != nil {
+// 		log.Fatalf("Failed to listen: %v", err)
+// 	}
+
+// 	server := grpc.NewServer(
+// 		grpc.UnaryInterceptor(grpc.ChainUnaryInterceptor(
+// 			validJWTNeeded(),
+// 			verifyRefreshBodyField(),
+// 			validRefreshNeeded(),
+// 		)),
+// 	)
+
+// 	// Replace `RegisterYourServiceServer` with the actual registration function.
+// 	grpc_your_service.RegisterYourServiceServer(server, &YourService{})
+
+// 	log.Println("gRPC server is running on port 50051")
+// 	if err := server.Serve(lis); err != nil {
+// 		log.Fatalf("Failed to serve: %v", err)
+// 	}
+// }
+
+// func validJWTNeeded() grpc.UnaryServerInterceptor {
+// 	return func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+// 		md, ok := metadata.FromIncomingContext(ctx)
+// 		if !ok {
+// 			return nil, status.Error(codes.Unauthenticated, "Missing metadata")
+// 		}
+
+// 		authHeader, ok := md["authorization"]
+// 		if !ok || len(authHeader) == 0 {
+// 			return nil, status.Error(codes.Unauthenticated, "Missing authorization header")
+// 		}
+
+// 		authParts := strings.Fields(authHeader[0])
+// 		if len(authParts) != 2 || authParts[0] != "Bearer" {
+// 			return nil, status.Error(codes.Unauthenticated, "Invalid authorization header")
+// 		}
+
+// 		token := authParts[1]
+// 		aud := fmt.Sprintf(audience, "yahia.xyz") // Replace with your actual origin or a default value
+// 		// Note: You need to handle the loading of the certificate file
+// 		// and parse it to obtain the public key for verification.
+// 		// You may use a library like `github.com/dgrijalva/jwt-go` for this purpose.
+// 		// Here, I'm using a placeholder function `verifyJWT` to represent the verification logic.
+// 		_, err := verifyJWT(token, issuer, aud)
+// 		if err != nil {
+// 			return nil, status.Error(codes.PermissionDenied, fmt.Sprintf("Invalid JWT: %v", err))
+// 		}
+
+// 		// Add the decoded JWT to the context for further processing if needed
+// 		// ctx = context.WithValue(ctx, "jwt", decodedJWT)
+
+// 		return handler(ctx, req)
+// 	}
+// }
+
+// func verifyRefreshBodyField() grpc.UnaryServerInterceptor {
+// 	return func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+// 		// Implement the logic to verify the presence of the refreshToken field in the request body
+// 		// You may access the request body based on the gRPC request type
+// 		// For simplicity, I'm assuming the request is of type `*YourRequestType`
+// 		// Replace `YourRequestType` with the actual type of your gRPC request.
+// 		// If the condition is not met, return an error using gRPC status.
+// 		return handler(ctx, req)
+// 	}
+// }
+
+// func validRefreshNeeded() grpc.UnaryServerInterceptor {
+// 	return func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+// 		// Implement the logic to validate the refresh token
+// 		// You may access the refresh token based on the gRPC request type
+// 		// For simplicity, I'm assuming the request is of type `*YourRequestType`
+// 		// Replace `YourRequestType` with the actual type of your gRPC request.
+// 		// If the refresh token is invalid, return an error using gRPC status.
+// 		return handler(ctx, req)
+// 	}
+// }
+
+// // Placeholder function representing JWT verification logic.
+// func verifyJWT(token, issuer, audience string) (*YourDecodedJWTType, error) {
+// 	// Implement the logic to verify the JWT using a library like `github.com/dgrijalva/jwt-go`
+// 	// Replace `YourDecodedJWTType` with the actual type of your decoded JWT.
+// 	// Return the decoded JWT or an error if verification fails.
+// 	return nil, nil
+// }
+
+// // Implement your gRPC service methods here.
+// // For example, you can define methods on `YourService` as follows:
+
+// // func (s *YourService) YourMethod(ctx context.Context, req *YourRequestType) (*YourResponseType, error) {
+// //     // Implement the logic for your gRPC method.
+// //     // You can access the decoded JWT from the context if needed.
+// //     // Example: `decodedJWT := ctx.Value("jwt").(*YourDecodedJWTType)`
+// //     return &YourResponseType{}, nil
+// // }
