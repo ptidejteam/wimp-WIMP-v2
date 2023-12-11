@@ -9,7 +9,6 @@ It translates gRPC into RESTful JSON APIs.
 package api
 
 import (
-	"WIMPv2/protos/user"
 	"context"
 	"io"
 	"net/http"
@@ -22,6 +21,7 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/proto"
+	"module github.com/ptidejteam/WIMPv2/packages/protos/user"
 )
 
 // Suppress "imported and not used" errors

@@ -7,11 +7,11 @@
 package api
 
 import (
-	user "WIMPv2/protos/user"
 	context "context"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	user "module github.com/ptidejteam/WIMPv2/packages/protos/user"
 )
 
 // This is a compile-time assertion to ensure that this generated file
