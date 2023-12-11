@@ -2,7 +2,7 @@ package interceptor
 
 import (
 	"context"
-	"WIMPv2/protos/user"
+	"github.com/ptidejteam/WIMPv2/packages/protos/user"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"

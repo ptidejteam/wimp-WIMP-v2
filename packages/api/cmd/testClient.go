@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	pb "WIMPv2/protos/api"
-	"WIMPv2/protos/user"
+	pb "github.com/ptidejteam/WIMPv2/packages/protos/api"
+	"github.com/ptidejteam/WIMPv2/packages/protos/user"
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 )

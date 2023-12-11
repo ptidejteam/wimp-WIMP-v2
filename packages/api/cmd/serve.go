@@ -4,7 +4,7 @@ import (
 	"github.com/ptidejteam/WIMPv2/packages/api/interceptor"
 	"github.com/ptidejteam/WIMPv2/packages/api/server"
 	pb "github.com/ptidejteam/WIMPv2/packages/protos/api"
-	"github.com/ptidejteam/WIMPv2/protos/user"
+	"github.com/ptidejteam/WIMPv2/packages/protos/user"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 
 	"log"

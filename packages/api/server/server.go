@@ -4,10 +4,10 @@ import (
 	"context"
 	"log"
 
-	"WIMPv2/api/interceptor"
+	"github.com/ptidejteam/WIMPv2/packages/api/interceptor"
 
-	pb "WIMPv2/protos/api"
-	"WIMPv2/protos/user"
+	pb "github.com/ptidejteam/WIMPv2/packages/protos/api"
+	"github.com/ptidejteam/WIMPv2/packages/protos/user"
 )
 
 // Server holds necessary values for server
