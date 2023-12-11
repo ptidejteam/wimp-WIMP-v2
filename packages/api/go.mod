@@ -1,4 +1,4 @@
-module github.com/ptidejteam/WIMPv2/api
+module github.com/ptidejteam/WIMPv2/packages/api
 
 go 1.21.4
 

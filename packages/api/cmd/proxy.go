@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	gw "WIMPv2/protos/api"
+	gw "github.com/ptidejteam/WIMPv2/packages/protos/api"
 	"github.com/joho/godotenv"
 	"log"
 	"os"

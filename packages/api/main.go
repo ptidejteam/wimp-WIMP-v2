@@ -1,6 +1,6 @@
 package main 
 
-import "github.com/yahiafellah/WIMPv2/cmd"
+import "github.com/ptidejteam/WIMPv2/api/packages/cmd"
 
 func main() { 
 	cmd.Execute()

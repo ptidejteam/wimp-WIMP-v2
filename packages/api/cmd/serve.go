@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	"WIMPv2/api/interceptor"
-	"WIMPv2/api/server"
-	pb "WIMPv2/protos/api"
-	"WIMPv2/protos/user"
+	"github.com/ptidejteam/WIMPv2/packages/api/interceptor"
+	"github.com/ptidejteam/WIMPv2/packages/api/server"
+	pb "github.com/ptidejteam/WIMPv2/packages/protos/api"
+	"github.com/ptidejteam/WIMPv2/protos/user"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 
 	"log"
