@@ -18,7 +18,13 @@
     "mongoose": "^7.6.3",
     "prom-client": "^15.0.0",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "@grpc/grpc-js": "^1.2.0",
+    "@grpc/proto-loader": "^0.5.5",
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "google-protobuf": "^3.14.0-rc.2",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",

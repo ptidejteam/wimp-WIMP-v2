@@ -3,3 +3,5 @@ dist/
 
 # Exclude the 'node_modules' directory
 /node_modules
+packages/protos/lib/google/*
+packages/*/vendor
