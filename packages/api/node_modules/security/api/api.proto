@@ -1,0 +1,32 @@
+syntax = "proto3";
+package protos.api;
+
+option go_package = "github.com/ptidejteam/WIMPv2/packages/protos/api";
+
+import "google/api/annotations.proto";
+import "user/user.proto";
+// import "project/project.proto";
+// import "task/task.proto";
+
+service API {
+    rpc Authenticate (user.LoginRequest) returns (user.LoginResponse) {
+        option (google.api.http) = {
+            post: "/v1/auth"
+            body: "*"
+        };
+    }
+
+    rpc RefreshToken (user.RefreshRequest) returns (user.LoginResponse) {
+        option (google.api.http) = {
+            post: "/v1/refresh"
+            body: "*"
+        };
+    }
+    
+    rpc CreateUser(user.CreateRequest) returns (user.CreateResponse) {
+        option (google.api.http) = {
+            post: "/users"
+            body: "*"
+        };
+    }
+}

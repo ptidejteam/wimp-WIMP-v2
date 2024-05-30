@@ -1,0 +1,22 @@
+type: google.api.Service
+config_version: 3
+name: cloudprofiler.googleapis.com
+title: Cloud Profiler API
+
+apis:
+- name: google.devtools.cloudprofiler.v2.ProfilerService
+
+documentation:
+  summary: Manages continuous profiling information.
+  overview: |-
+    The Cloud Profiler API manages the continuous profiling information
+    collected in cloud environments like App Engine, GKE and GCE.
+
+authentication:
+  rules:
+  - selector: 'google.devtools.cloudprofiler.v2.ProfilerService.*'
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/cloud-platform,
+        https://www.googleapis.com/auth/monitoring,
+        https://www.googleapis.com/auth/monitoring.write

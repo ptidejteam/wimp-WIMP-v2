@@ -1,0 +1,32 @@
+{
+  "name": "protos",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "YahiaFellah <33671463+yahiaelfellah@users.noreply.github.com>",
+  "homepage": "https://github.com/ptidejteam/WIMPv2#readme",
+  "license": "ISC",
+  "main": "lib/protos.js",
+  "directories": {
+    "api": "api",
+    "user": "user",
+    "google": "google"
+  },
+  "files": [
+    "api",
+    "user",
+    "google"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptidejteam/WIMPv2.git"
+  },
+  "scripts": {
+    "build": "build.bat",
+    "generate": "npx grpc_tools_node_protoc --js_out=import_style=commonjs,binary:lib/user --grpc_out=grpc_js:lib/user --proto_path=./lib/user ./lib/user/*.proto",
+    "build-go": "go build ./user && go build ./api",
+    "test": "node ./__tests__/protos.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ptidejteam/WIMPv2/issues"
+  }
+}
